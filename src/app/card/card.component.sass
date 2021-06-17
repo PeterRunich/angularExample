@@ -1,0 +1,31 @@
+ul
+	padding: 1rem
+	list-style: none
+
+li
+	padding: .7rem 0
+
+.title
+	font-weight: 600
+	text-transform: uppercase
+	font-size: .7rem
+	color: #4B5563
+
+.line
+	margin-top: 8px
+
+// Я не догнал как переопределить по-человечески без !important.
+
+::ng-deep .mat-checkbox-label
+	margin-left: 1rem
+	font-weight: 300
+	text-transform: capitalize
+
+::ng-deep .mat-checkbox-frame
+	border: 1px solid #d4d9de !important
+
+::ng-deep .mat-checkbox-frame, .mat-checkbox-background
+	border-radius: 0px !important 
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background
+	background-color: #3aafda !important

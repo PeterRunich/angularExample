@@ -1,0 +1,12 @@
+<mat-card>
+	<span class="title">{{ project?.title }}</span>
+	<mat-divider class="line"></mat-divider>
+
+	<mat-card-content>
+		<ul>
+			<li *ngFor="let todo of project?.todos">
+				<app-cardRow [todo]="todo"></app-cardRow>
+			</li>
+		</ul>
+	</mat-card-content>
+</mat-card>

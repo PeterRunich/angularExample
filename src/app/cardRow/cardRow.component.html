@@ -1,0 +1,3 @@
+<mat-checkbox (click)="toggler()" [checked]="todo.isCompleted" [style.textDecoration]="todo.isCompleted ? 'line-through' : 'none'">
+	{{ todo.text }}
+</mat-checkbox>
