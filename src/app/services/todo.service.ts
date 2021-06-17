@@ -15,6 +15,10 @@ export class TodoService {
     return this.http.patch<Todo>(`https://apifortodo.herokuapp.com/projects/${fields.project_id}/todo/${fields.id}`, fields)
   }
 
+  createTodo(fields: object) {
+    return this.http.post<Todo>('https://apifortodo.herokuapp.com/todos', fields)
+  }
+
   toggleComplete(todo: Todo): void {
     this.updateTodoById(todo.id, todo).subscribe(updatedTodo=> console.log(updatedTodo))
   }

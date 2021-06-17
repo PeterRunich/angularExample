@@ -11,5 +11,5 @@ import { Project } from "./project"
 export class CardComponent {
 	@Input() project?: Project
 
-	constructor() {}
+	constructor() { }
 }

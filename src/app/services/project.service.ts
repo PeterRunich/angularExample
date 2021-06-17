@@ -12,6 +12,10 @@ export class ProjectService {
   constructor(private http: HttpClient) { }
 
   getProjects() {
-    return this.http.get<Project[]>('https://apifortodo.herokuapp.com/')
+    return this.http.get<Project[]>('https://apifortodo.herokuapp.com/projects')
+  }
+
+  createProject(fields: Project) {
+    return this.http.patch<Project>('https://apifortodo.herokuapp.com/todos', fields)
   }
 }

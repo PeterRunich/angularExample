@@ -1,10 +1,9 @@
 <mat-toolbar class="header">
-  <span class="title">Задачи</span>
-	<mat-icon class="add-icon">add</mat-icon>
+	<span class="title">Задачи</span>
+	<app-modal-new-project [projects]="projects"></app-modal-new-project>
 </mat-toolbar>
 
 <div class="cards">
-	<app-card
-	*ngFor="let project of projects" [project]="project">	
+	<app-card *ngFor="let project of projects" [project]="project">
 	</app-card>
 </div>
