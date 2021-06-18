@@ -1,4 +1,4 @@
-import { Todo } from "./todo"
+import { Todo } from "./todo.type"
 
 export interface Project {
 	id: number,

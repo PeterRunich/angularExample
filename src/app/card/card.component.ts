@@ -1,11 +1,11 @@
+import { Project } from "../models/project.model"
 import { Component, Input } from "@angular/core"
 
-import { Project } from "./project"
 
 @Component({
-	selector: "app-card",
+	selector:    "app-card",
 	templateUrl: "./card.component.html",
-	styleUrls: ["./card.component.sass"]
+	styleUrls:   ["./card.component.sass"]
 })
 
 export class CardComponent {

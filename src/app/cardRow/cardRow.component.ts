@@ -1,17 +1,19 @@
 import { Component, Input, OnInit } from "@angular/core"
-import { Todo } from "../card/todo"
 import { TodoService } from "../services/todo.service"
+import { Todo } from "../models/todo.model"
+
 
 @Component({
-	selector: "app-cardRow",
+	selector:    "app-cardRow",
 	templateUrl: "./cardRow.component.html",
-	styleUrls: ["./cardRow.component.sass"]
+	styleUrls:   ["./cardRow.component.sass"]
 })
 
 export class CardRowComponent implements OnInit {
-	@Input() todo: Todo = { id: 0, text: '', isCompleted: false, project_id: 0 }
-	completed: boolean = false
 
+	@Input() todo: Todo = new Todo()
+	completed!: boolean
+	
 	constructor(private todoService: TodoService) { }
 
 	ngOnInit() {
@@ -19,12 +21,8 @@ export class CardRowComponent implements OnInit {
 	}
 
 	toggler(): void {
-		console.log(this.todo.isCompleted)
 		this.todo.isCompleted = !this.todo.isCompleted
+		
 		this.todoService.toggleComplete(this.todo)
-	}
-
-	test() {
-		console.log(this)
 	}
 }

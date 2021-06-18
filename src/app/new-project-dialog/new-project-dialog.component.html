@@ -10,13 +10,11 @@
 					<mat-option *ngFor="let project of projects" value="{{ project.id }}">{{ project.title }}</mat-option>
 				</mat-select>
 			</mat-form-field>
-
-			<div formArrayName="new_project">
-				<div *ngFor="let project of new_project.controls; let i=index">
-					<input id="alias-{{ i }}" type="text" placeholder="Название новой категории..." [formControlName]="i">
-				</div>
+			
+			<div class="inlineFlex" formArrayName="new_project">
+				<input class="w-full" *ngFor="let project of new_project.controls; let i=index" id="alias-{{ i }}" type="text" placeholder="Название новой категории..." [formControlName]="i">
 			</div>
-
+		
 	</div>
 
 	<div mat-dialog-actions class="btns">
