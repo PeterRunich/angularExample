@@ -3,12 +3,20 @@
 <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
 	<div mat-dialog-content class="fields">
 			<input type="text" formControlName="text" placeholder="Название задачи...">
+
 			<mat-form-field appearance="fill">
-				<mat-select formControlName="project_id">
+				<mat-select (selectionChange)="projectSelected()" formControlName="project_id">
 					<mat-option value="new">Новая категория</mat-option>
 					<mat-option *ngFor="let project of projects" value="{{ project.id }}">{{ project.title }}</mat-option>
 				</mat-select>
 			</mat-form-field>
+
+			<div formArrayName="new_project">
+				<div *ngFor="let project of new_project.controls; let i=index">
+					<input id="alias-{{ i }}" type="text" placeholder="Название новой категории..." [formControlName]="i">
+				</div>
+			</div>
+
 	</div>
 
 	<div mat-dialog-actions class="btns">

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '../card/project'
 
@@ -15,7 +14,7 @@ export class ProjectService {
     return this.http.get<Project[]>('https://apifortodo.herokuapp.com/projects')
   }
 
-  createProject(fields: Project) {
-    return this.http.patch<Project>('https://apifortodo.herokuapp.com/todos', fields)
+  createProject(fields: object) {
+    return this.http.post<Project>('https://apifortodo.herokuapp.com/projects', fields)
   }
 }
